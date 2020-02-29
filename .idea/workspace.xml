@@ -1,14 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="687aa3f5-c32d-4402-b745-61569c9babcc" name="Default Changelist" comment="" />
+    <list default="true" id="687aa3f5-c32d-4402-b745-61569c9babcc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_20_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_istack_istack_commons_runtime_3_0_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_fastinfoset_FastInfoset_1_2_16.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_3_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_core_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_schema_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spi_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spring_web_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger2_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_common_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_ui_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_annotations_1_5_20.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_models_1_5_20.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_persistence_jakarta_persistence_api_2_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_transaction_jakarta_transaction_api_1_3_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_dom4j_dom4j_2_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_2_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_txw2_2_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_1_0_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_4_12_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_24_0_GA.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_1_1_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jvnet_staxex_stax_ex_1_8_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mapstruct_mapstruct_1_2_0_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_jpa_2_2_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_2_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_2_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_metadata_1_2_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_5_2_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_2_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_5_2_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webapp/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webapp/src/main/java/webapp/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webapp/src/main/java/webapp/exceptions/ResourceNotFound.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webapp/src/main/java/webapp/exceptions/ResourceNotFoundDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webapp/src/main/java/webapp/exceptions/RestExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webapp/src/main/java/webapp/exceptions/UsernameDuplicated.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webapp/src/main/java/webapp/repo/UserRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webapp/src/main/java/webapp/resource/UserResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webapp/src/main/java/webapp/services/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webapp/src/main/java/webapp/services/UserServiceInt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webapp/src/main/resources/application-exceptionTitles.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webapp/src/main/resources/application-jpaHibernate.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webapp/src/main/resources/application-poolConnection.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_19.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_6_0_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_12_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_12_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_30.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_2_5_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_2_5_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_core_2_0_0_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_core_1_2_0_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/router/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/router/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/router/src/main/resources/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="ProjectId" id="1YSS2SknUTRhCS3yyzLGsaFMznn" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -23,9 +100,10 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/router/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -35,14 +113,16 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Java" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\SERVIDOR\Projects\revproxbal\router\src\main\resources" />
-      <recent name="C:\Users\SERVIDOR\Projects\revproxbal\router\src\main" />
-      <recent name="C:\Users\SERVIDOR\Projects\revproxbal\router" />
+      <recent name="C:\Users\SERVIDOR\Projects\revproxbal\webapp\src\main\java\webapp\resource" />
+      <recent name="C:\Users\SERVIDOR\Projects\revproxbal\webapp\src\main\java\webapp\services" />
+      <recent name="C:\Users\SERVIDOR\Projects\revproxbal\webapp\src\main\java\webapp\exceptions" />
+      <recent name="C:\Users\SERVIDOR\Projects\revproxbal\webapp\src\main\resources" />
+      <recent name="C:\Users\SERVIDOR\Projects\revproxbal\webapp\src\main\java\webapp\entity" />
     </key>
   </component>
   <component name="RunManager">
@@ -63,45 +143,79 @@
       <updated>1582934294370</updated>
       <workItem from="1582934295685" duration="2476000" />
       <workItem from="1582937325657" duration="557000" />
-      <workItem from="1582937896276" duration="1049000" />
+      <workItem from="1582937896276" duration="1531000" />
+      <workItem from="1582939664656" duration="7610000" />
+      <workItem from="1582948047623" duration="3000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="161" y="0" key="#Assign_Data_Sources" timestamp="1582940614814">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="161" y="0" key="#Assign_Data_Sources/0.0.1536.864@0.0.1536.864" timestamp="1582940614814" />
     <state x="151" y="76" width="1214" height="788" key="#Project_Structure" timestamp="1582936753374">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="151" y="76" width="1214" height="788" key="#Project_Structure/0.0.1536.864@0.0.1536.864" timestamp="1582936753374" />
-    <state x="449" y="0" key="FileChooserDialogImpl" timestamp="1582937783662">
+    <state x="486" y="7" key="#com.intellij.ide.util.MemberChooser" timestamp="1582947545842">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="449" y="0" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1582937783662" />
-    <state width="1474" height="209" key="GridCell.Tab.0.bottom" timestamp="1582937882250">
+    <state x="486" y="7" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1582947545842" />
+    <state x="448" y="184" key="#com.intellij.refactoring.move.moveInstanceMethod.MoveInstanceMethodDialog" timestamp="1582947910027">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1474" height="209" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1582937882250" />
-    <state width="1474" height="209" key="GridCell.Tab.0.center" timestamp="1582937882250">
+    <state x="448" y="184" key="#com.intellij.refactoring.move.moveInstanceMethod.MoveInstanceMethodDialog/0.0.1536.864@0.0.1536.864" timestamp="1582947910027" />
+    <state x="449" y="0" key="FileChooserDialogImpl" timestamp="1582939889307">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1474" height="209" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1582937882250" />
-    <state width="1474" height="209" key="GridCell.Tab.0.left" timestamp="1582937882249">
+    <state x="449" y="0" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1582939889307" />
+    <state width="1475" height="194" key="GridCell.Tab.0.bottom" timestamp="1582948016004">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1474" height="209" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1582937882249" />
-    <state width="1474" height="209" key="GridCell.Tab.0.right" timestamp="1582937882250">
+    <state width="1475" height="194" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1582948016004" />
+    <state width="1475" height="194" key="GridCell.Tab.0.center" timestamp="1582948016004">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1474" height="209" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1582937882250" />
+    <state width="1475" height="194" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1582948016004" />
+    <state width="1475" height="194" key="GridCell.Tab.0.left" timestamp="1582948016004">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1475" height="194" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1582948016004" />
+    <state width="1475" height="194" key="GridCell.Tab.0.right" timestamp="1582948016004">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1475" height="194" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1582948016004" />
     <state x="286" y="0" key="NewModule_or_Project.wizard" timestamp="1582937787478">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="286" y="0" key="NewModule_or_Project.wizard/0.0.1536.864@0.0.1536.864" timestamp="1582937787478" />
-    <state x="0" y="36" width="1536" height="828" key="new project wizard" timestamp="1582937150847">
+    <state x="45" y="0" key="SettingsEditor" timestamp="1582942987324">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="0" y="36" width="1536" height="828" key="new project wizard/0.0.1536.864@0.0.1536.864" timestamp="1582937150847" />
+    <state x="45" y="0" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1582942987324" />
+    <state x="0" y="36" width="1536" height="828" key="new project wizard" timestamp="1582939878165">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="0" y="36" width="1536" height="828" key="new project wizard/0.0.1536.864@0.0.1536.864" timestamp="1582939878165" />
   </component>
 </project>
