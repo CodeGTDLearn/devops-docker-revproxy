@@ -1,0 +1,55 @@
+version: '3.4'
+
+#VARIAVEIS COMUNS DENTRO DO COMPOSE
+x-common-variables:
+  &db-variables
+    MYSQL_DATABASE: Users
+    MYSQL_USERNAME: root
+    MYSQL_ROOT_PASSWORD: root
+
+networks:
+  db:
+  router:
+
+services:
+  mysql:
+    image: mysql:5.7.22
+#    ports:
+#     - "8888:3306" #>>> This port is used only for debug
+    hostname: mysql
+    environment:
+      *db-variables
+    networks:
+      - db
+  
+  router:
+    build: router
+    image: router-img
+    ports:            #PORT:
+      - "1111:8080"   #REQUEST ENTRY-POINT [PORTA DE ENTRADA DO REQUESTS]
+    hostname: router
+    tty: true
+    environment:
+      - CATALINE_BASE=/opt/tomcat
+      - CATALINE_HOME=/opt/tomcat
+    depends_on:
+      - webapp
+    networks:
+      - router
+  
+  webapp:
+    build: webapp
+    image: web-img
+    #ports:
+    #  - "8080:8080" >>> Use this ONLY to test WebApp Folder in Postman
+    hostname: web
+    tty: true
+    depends_on:
+      - mysql
+    environment:
+      <<: *db-variables
+      DB_PORT: tcp://mysql:3306
+      DB_NOME_BANCO: Users
+    networks:
+      - db
+      - router
