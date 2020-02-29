@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="687aa3f5-c32d-4402-b745-61569c9babcc" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1YSS2SknUTRhCS3yyzLGsaFMznn" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/router" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="webapp" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="webapp.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="687aa3f5-c32d-4402-b745-61569c9babcc" name="Default Changelist" comment="" />
+      <created>1582934294370</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582934294370</updated>
+      <workItem from="1582934295685" duration="2476000" />
+      <workItem from="1582937325657" duration="557000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="151" y="76" width="1214" height="788" key="#Project_Structure" timestamp="1582936753374">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="151" y="76" width="1214" height="788" key="#Project_Structure/0.0.1536.864@0.0.1536.864" timestamp="1582936753374" />
+    <state x="449" y="0" key="FileChooserDialogImpl" timestamp="1582937783662">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="449" y="0" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1582937783662" />
+    <state width="1474" height="209" key="GridCell.Tab.0.bottom" timestamp="1582937882250">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1474" height="209" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1582937882250" />
+    <state width="1474" height="209" key="GridCell.Tab.0.center" timestamp="1582937882250">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1474" height="209" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1582937882250" />
+    <state width="1474" height="209" key="GridCell.Tab.0.left" timestamp="1582937882249">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1474" height="209" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1582937882249" />
+    <state width="1474" height="209" key="GridCell.Tab.0.right" timestamp="1582937882250">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1474" height="209" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1582937882250" />
+    <state x="286" y="0" key="NewModule_or_Project.wizard" timestamp="1582937787478">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="286" y="0" key="NewModule_or_Project.wizard/0.0.1536.864@0.0.1536.864" timestamp="1582937787478" />
+    <state x="0" y="36" width="1536" height="828" key="new project wizard" timestamp="1582937150847">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="0" y="36" width="1536" height="828" key="new project wizard/0.0.1536.864@0.0.1536.864" timestamp="1582937150847" />
+  </component>
+</project>
