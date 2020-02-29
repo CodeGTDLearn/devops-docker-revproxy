@@ -7,7 +7,11 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1YSS2SknUTRhCS3yyzLGsaFMznn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -31,6 +35,11 @@
     <property name="settings.editor.selected.configurable" value="terminal" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\SERVIDOR\Projects\revproxbal\router" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="webapp" />
@@ -49,6 +58,7 @@
       <updated>1582934294370</updated>
       <workItem from="1582934295685" duration="2476000" />
       <workItem from="1582937325657" duration="557000" />
+      <workItem from="1582937896276" duration="357000" />
     </task>
     <servers />
   </component>
