@@ -29,7 +29,6 @@ public class RestExceptionHandler {
         return new ResponseEntity<>(excDet, HttpStatus.BAD_REQUEST);
     }
 
-
     @ExceptionHandler(ResourceNotFound.class)
     public ResponseEntity<?> ResourceNotFoundException(ResourceNotFound exception) {
         ResourceNotFoundDetails excDet = new ResourceNotFoundDetails(
@@ -42,7 +41,6 @@ public class RestExceptionHandler {
         return new ResponseEntity<>(excDet, HttpStatus.NOT_FOUND);
     }
 
-
     @ExceptionHandler(DataIntegrityViolationException.class)
     public ResponseEntity<?> ConstraintViolationException(DataIntegrityViolationException exception) {
         ResourceNotFoundDetails excDet = new ResourceNotFoundDetails(
@@ -53,7 +51,6 @@ public class RestExceptionHandler {
                 new Date().getTime());
 
         return new ResponseEntity<>(excDet, HttpStatus.INTERNAL_SERVER_ERROR);
-
     }
 
     @ExceptionHandler(HttpMessageNotReadableException.class)
@@ -66,6 +63,5 @@ public class RestExceptionHandler {
                 new Date().getTime());
 
         return new ResponseEntity<>(excDet, HttpStatus.BAD_REQUEST);
-
     }
 }

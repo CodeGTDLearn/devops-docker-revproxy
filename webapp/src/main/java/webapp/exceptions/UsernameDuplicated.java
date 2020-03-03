@@ -13,5 +13,4 @@ public class UsernameDuplicated extends RuntimeException implements Serializable
     public UsernameDuplicated(String message) {
         super(message);
     }
-
 }

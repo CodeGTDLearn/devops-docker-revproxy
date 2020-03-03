@@ -1,11 +1,11 @@
-package IpBalancingTypes;
+package main.java.router.IpBalancingTypes;
 
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 import utils.LogTerminal;
 
-public class IpSequential implements IpInt {
+public class IpSequential implements IpBalancingTypes.IpInt {
 
     private int position = 0;
 

@@ -7,10 +7,6 @@ import webapp.entity.User;
 @RepositoryRestResource
 public interface UserRepo extends JpaRepository<User, Long> {
 
-    User findByEmail(String email);
-
-    User findUserById(long id);
-
     User findByName(String email);
 
 }

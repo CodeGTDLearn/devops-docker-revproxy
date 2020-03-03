@@ -12,6 +12,7 @@ import webapp.exceptions.UsernameDuplicated;
 import webapp.services.UserServiceInt;
 
 import javax.validation.Valid;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/users")
@@ -25,9 +26,15 @@ public class UserResource {
         return userServ.add(user);
     }
 
-    @PutMapping
-    public User update(@Valid @RequestBody User user) {
-        return userServ.update(user);
+
+    @PutMapping("/{id}")
+    public ResponseEntity<User> update(@RequestBody User user, @PathVariable long id) {
+
+        if (userServ.getById(id) == null) return ResponseEntity.notFound().build();
+        userServ.delete(id);
+        user.setId(id);
+        userServ.add(user);
+        return ResponseEntity.noContent().build();
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
@@ -47,10 +54,8 @@ public class UserResource {
     }
 
     @GetMapping
-    public ResponseEntity<Page<User>> findAll(Pageable pageable){
+    public ResponseEntity<Page<User>> findAll(Pageable pageable) {
         Page<User> userList = userServ.findAll(pageable);
         return new ResponseEntity<>(userList, new HttpHeaders(), HttpStatus.OK);
     }
-
-
 }

@@ -13,9 +13,5 @@ public class ResourceNotFound extends RuntimeException implements Serializable{
     public ResourceNotFound(String message)
     {
         super(message);
-        //teste commit;
     }
-
-
-
 }
