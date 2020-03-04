@@ -1,4 +1,4 @@
-package IpBalancingTypes;
+package main.java.router.IpBalancingTypes;
 
 import java.util.List;
 

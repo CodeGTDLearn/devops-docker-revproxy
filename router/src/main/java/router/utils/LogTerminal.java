@@ -1,4 +1,4 @@
-package utils;
+package main.java.router.utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,9 +20,9 @@ public class LogTerminal {
         }
     }
 
-    public static void showlogget(String port, String uri, String path, String endpoint, String ipAddress, String url) {
+    public static void showlogg(String port, String uri, String path, String endpoint, String ipAddress, String url, String verb) {
         dividers(true);
-        System.out.println("VERB GET:");
+        System.out.println("VERB: " + verb);
         System.out.println("   -URI: " + uri);
         System.out.println("   -REQUEST: " + path);
         System.out.println("   -ENDPOINT: " + endpoint);

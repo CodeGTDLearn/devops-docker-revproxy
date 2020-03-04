@@ -1,4 +1,4 @@
-package utils;
+package main.java.router.utils;
 
 import java.util.Properties;
 import java.io.FileInputStream;

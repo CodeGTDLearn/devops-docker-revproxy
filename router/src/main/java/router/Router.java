@@ -1,4 +1,3 @@
-//package org.pictolearn.docker.servlet;
 package main.java.router;
 
 import java.io.BufferedReader;
@@ -18,7 +17,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.ThreadLocalRandom;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,12 +24,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import main.java.router.IpBalancingTypes.IpInt;
 import main.java.router.IpBalancingTypes.IpSequential;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 
-import utils.LogTerminal;
-import utils.ManageProperties;
+import main.java.router.utils.LogTerminal;
+import main.java.router.utils.ManageProperties;
 
 
 //1) ANOTA A URL DO SERVLET (URL PRECEDENTE AO "ENDPOINT DO WEBAPP")
@@ -50,7 +49,7 @@ public class Router extends HttpServlet {
     //4) NOME DO CONTAINER DO SERVIDOR "FINAL" NO DOCKER-COMPOSE
     private final String webAppServiceNameFromCompose = ManageProperties.getInstance().getProp("webAppServiceNameFromCompose");
 
-    private String uri, path, endpoint, ipAddress, urlMontada;
+    private String uri, path, endpoint, ipAddress, urlMontada, verb;
 
     @Override
     protected void doGet(
@@ -67,9 +66,11 @@ public class Router extends HttpServlet {
         endpoint = path.substring(path.indexOf(urlClassRouter) +
                 urlClassRouter.length(), path.length());
 
+        verb = "GET";
+
         checkEndpoint(response, endpoint, "Invalid GET CALL");
 
-        //5.4) GET - GETA O IP RANDOMICO, RETORNADO DO HOSTNAME SELECIONADO
+        //5.4) GET - GETA O IP, RETORNADO DO HOSTNAME SELECIONADO
         ipAddress = getIpAddress(response, webAppServiceNameFromCompose);
 
         checkIPNullability(response, ipAddress);
@@ -81,12 +82,12 @@ public class Router extends HttpServlet {
         response.addHeader("WEB-HOST-GET-SCALE", ipAddress);
 
         //5.7) GET - CONVERTE STRING DA URL-TARGET, EM URL-REAL
-        HttpURLConnection con = connectAndSetRequestMethod(urlMontada, "GET");
+        HttpURLConnection con = connectAndSetRequestMethod(urlMontada, verb);
 
         //5.7) GET - DISPATCH O REQUEST P/ URL USANDO SENDRESPONSE - MOSTRA O BODY DA REQUEST
         sendResponse(response, con);
 
-        LogTerminal.showlogget(port, uri, path, endpoint, ipAddress, urlMontada);
+        LogTerminal.showlogg(port, uri, path, endpoint, ipAddress, urlMontada, verb);
     }
 
 
@@ -107,8 +108,10 @@ public class Router extends HttpServlet {
 
         checkEndpoint(response, endpoint, "Invalid POST CALL empty URI");
 
-        //6.4) POST - GETA O IP RANDOMICO, RETORNADO DO HOSTNAME SELECIONADO
+        //6.4) POST - GETA O IP, RETORNADO DO HOSTNAME SELECIONADO
         ipAddress = getIpAddress(response, webAppServiceNameFromCompose);
+
+        verb = "POST";
 
         checkIPNullability(response, ipAddress);
 
@@ -119,7 +122,7 @@ public class Router extends HttpServlet {
         response.addHeader("WEB-HOST-POST-SCALE", ipAddress);
 
         //6.7) POST - CONVERTE STRING DA URL-TARGET, EM URL-REAL
-        HttpURLConnection con = connectAndSetRequestMethod(urlMontada, "POST");
+        HttpURLConnection con = connectAndSetRequestMethod(urlMontada, verb);
 
         Enumeration<String> headerNames = request.getHeaderNames();
         Set<String> headers = new HashSet<>();
@@ -145,7 +148,68 @@ public class Router extends HttpServlet {
         wr.close();
         sendResponse(response, con);
 
-        LogTerminal.showlogpost(port, uri, path, endpoint, ipAddress, urlMontada);
+        LogTerminal.showlogg(port, uri, path, endpoint, ipAddress, urlMontada, verb);
+        LogTerminal.showpostheader(headers, request);
+    }
+
+    @Override
+    protected void doPut(
+            HttpServletRequest request,
+            HttpServletResponse response) throws ServletException, IOException {
+
+        //6.1) PUT - INTERCEPTA URI
+        uri = request.getRequestURI().toString();
+
+        //6.2) PUT - EXTRAI URL-ROUTER + ENDPOINT
+        path = request.getRequestURI().substring(request.getContextPath().length());
+
+        //6.3) PUT - SELECIONA HOSTNAME
+        endpoint = path.substring(path.indexOf(urlClassRouter) +
+                urlClassRouter.length(), path.length());
+
+        checkEndpoint(response, endpoint, "Invalid POST CALL empty URI");
+
+        //6.4) PUT - GETA O IP, RETORNADO DO HOSTNAME SELECIONADO
+        ipAddress = getIpAddress(response, webAppServiceNameFromCompose);
+
+        verb = "PUT";
+
+        checkIPNullability(response, ipAddress);
+
+        //6.5) PUT - MONTA URL-TARGET(SERVIDOR FINAL)
+        urlMontada = "http://" + ipAddress + ":" + port + "/" + endpoint;
+
+        //6.6) PUT - ADICIONA NOVO HEADER(URL-TARGET) NO REQUEST
+        response.addHeader("WEB-HOST-POST-SCALE", ipAddress);
+
+        //6.7) PUT - CONVERTE STRING DA URL-TARGET, EM URL-REAL
+        HttpURLConnection con = connectAndSetRequestMethod(urlMontada, verb);
+
+        Enumeration<String> headerNames = request.getHeaderNames();
+        Set<String> headers = new HashSet<>();
+        while (headerNames.hasMoreElements()) {
+            headers.add(headerNames.nextElement());
+        }
+
+        if (!CollectionUtils.isEmpty(headers)) {
+            for (String header : headers) {
+                String value = request.getHeader(header);
+                con.setRequestProperty(header, value);
+            }
+        }
+
+        //6.8) POST - SHOW THE REQUEST-BODY
+        con.setDoOutput(true);
+        String body = getBody(request);
+
+        //6.9) POST - DISPATCH O REQUEST P/ URL USANDO SENDRESPONSE - MOSTRA O BODY DA REQUEST
+        OutputStream wr = con.getOutputStream();
+        wr.write(body.getBytes("UTF-8"));
+        wr.flush();
+        wr.close();
+        sendResponse(response, con);
+
+        LogTerminal.showlogg(port, uri, path, endpoint, ipAddress, urlMontada, verb);
         LogTerminal.showpostheader(headers, request);
     }
 
@@ -164,8 +228,10 @@ public class Router extends HttpServlet {
 
         checkEndpoint(response, endpoint, "Invalid DELETE CALL");
 
-        //5.4) DELETE - GETA O IP RANDOMICO, RETORNADO DO HOSTNAME SELECIONADO
+        //5.4) DELETE - GETA O IP, RETORNADO DO HOSTNAME SELECIONADO
         ipAddress = getIpAddress(response, webAppServiceNameFromCompose);
+
+        verb = "DELETE";
 
         checkIPNullability(response, ipAddress);
 
@@ -176,46 +242,12 @@ public class Router extends HttpServlet {
         response.addHeader("WEB-HOST-DELETE-SCALE", ipAddress);
 
         //5.7) DELETE - CONVERTE STRING DA URL-TARGET, EM URL-REAL
-        HttpURLConnection con = connectAndSetRequestMethod(urlMontada, "DELETE");
+        HttpURLConnection con = connectAndSetRequestMethod(urlMontada, verb);
 
         //5.7) DELETE - DISPATCH O REQUEST P/ URL USANDO SENDRESPONSE - MOSTRA O BODY DA REQUEST
         sendResponse(response, con);
 
-        LogTerminal.showlogget(port, uri, path, endpoint, ipAddress, urlMontada);
-    }
-
-    @Override
-    protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //5.1) PUT - INTERCEPTA URI
-        uri = request.getRequestURI().toString();
-
-        //5.2) PUT - EXTRAI URL-ROUTER + ENDPOINT
-        path = request.getRequestURI().substring(request.getContextPath().length());
-
-        //5.3) PUT - SELECIONA HOSTNAME
-        endpoint = path.substring(path.indexOf(urlClassRouter) +
-                urlClassRouter.length(), path.length());
-
-        checkEndpoint(response, endpoint, "Invalid UPDATE CALL");
-
-        //5.4) PUT - GETA O IP RANDOMICO, RETORNADO DO HOSTNAME SELECIONADO
-        ipAddress = getIpAddress(response, webAppServiceNameFromCompose);
-
-        checkIPNullability(response, ipAddress);
-
-        //5.5) PUT - MONTA URL-TARGET(SERVIDOR FINAL)
-        urlMontada = "http://" + ipAddress + ":" + port + "/" + endpoint;
-
-        //5.6) PUT - ADICIONA NOVO HEADER(URL-TARGET) NO REQUEST
-        response.addHeader("WEB-HOST-UPDATE-SCALE", ipAddress);
-
-        //5.7) PUT - CONVERTE STRING DA URL-TARGET, EM URL-REAL
-        HttpURLConnection con = connectAndSetRequestMethod(urlMontada, "PUT");
-
-        //5.7) PUT - DISPATCH O REQUEST P/ URL USANDO SENDRESPONSE - MOSTRA O BODY DA REQUEST
-        sendResponse(response, con);
-
-        LogTerminal.showlogget(port, uri, path, endpoint, ipAddress, urlMontada);
+        LogTerminal.showlogg(port, uri, path, endpoint, ipAddress, urlMontada, verb);
     }
 
     public String getBody(HttpServletRequest request) throws IOException {
@@ -269,7 +301,7 @@ public class Router extends HttpServlet {
         }
 
         //INJETA A DEPENDENCIA "IP SELECTION METHOD"
-        IpBalancingTypes.IpInt injectIpSelectionMethod = new IpSequential().getInstance();
+        IpInt injectIpSelectionMethod = IpSequential.getInstance();
 //        IpInt injectIpSelectionMethod = new IpRandom();
         int position = injectIpSelectionMethod.getIp(ipAddr);
 

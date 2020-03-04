@@ -11,8 +11,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 
-import java.util.Properties;
-import utils.ManageProperties;
+import main.java.router.utils.ManageProperties;
 
 //ANOTA ESTA CLASSE COM SENDO O FILTRO (filterProxy)
 @WebFilter(filterName = "filterProxy")

@@ -1,11 +1,10 @@
 package main.java.router.IpBalancingTypes;
 
 import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
 
-import utils.LogTerminal;
+import main.java.router.utils.LogTerminal;
 
-public class IpSequential implements IpBalancingTypes.IpInt {
+public class IpSequential implements IpInt {
 
     private int position = 0;
 
@@ -23,7 +22,7 @@ public class IpSequential implements IpBalancingTypes.IpInt {
     public int getIp(List<String> ipAddr) {
         if (ipAddr.size()  > 1 && this.position < ipAddr.size() ) {
             this.position++;
-            if(this.position == 4) this.position = 0;
+            if(this.position == ipAddr.size()) this.position = 0;
         }
         LogTerminal.showlogipposition("SEQUENTIAL", this.position);
         return position;

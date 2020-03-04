@@ -3,9 +3,9 @@ package main.java.router.IpBalancingTypes;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-import utils.LogTerminal;
+import main.java.router.utils.LogTerminal;
 
-public class IpRandom implements IpBalancingTypes.IpInt {
+public class IpRandom implements IpInt {
 
     @Override
     public int getIp(List<String> ipAddr) {
