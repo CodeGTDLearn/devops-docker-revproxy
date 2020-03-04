@@ -7,7 +7,7 @@ import webapp.exceptions.UsernameDuplicated;
 
 public interface UserServiceInt {
 
-    User add(User user) throws UsernameDuplicated;
+    User save(User user) throws UsernameDuplicated;
 
     User update(User user);
 
@@ -15,7 +15,7 @@ public interface UserServiceInt {
 
     Page<User> findAll(Pageable pageable);
 
-    User getById(Long id);
+    User findById(Long id);
 
     public void verifyIdUserLaunchException(Long id);
 

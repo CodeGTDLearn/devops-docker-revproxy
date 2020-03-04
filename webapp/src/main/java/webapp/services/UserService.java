@@ -18,7 +18,7 @@ public class UserService implements UserServiceInt {
     private UserRepo userRepo;
 
     @Override
-    public User add(User user) throws UsernameDuplicated {
+    public User save(User user) throws UsernameDuplicated {
 
         User checkUsername = userRepo.findByName(user.getName());
 
@@ -47,7 +47,7 @@ public class UserService implements UserServiceInt {
     }
 
     @Override
-    public User getById(Long id) {
+    public User findById(Long id) {
 
         Optional<User> userReturn = userRepo.findById(id);
 
@@ -58,7 +58,7 @@ public class UserService implements UserServiceInt {
     public void verifyIdUserLaunchException(Long id) {
         User userTest = new User();
         try {
-            userTest = getById(id);
+            userTest = findById(id);
         } catch (Exception e) {
             throw new ResourceNotFound("User ID not found.");
         }

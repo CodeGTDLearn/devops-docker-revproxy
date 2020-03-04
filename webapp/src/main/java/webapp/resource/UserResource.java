@@ -10,9 +10,10 @@ import org.springframework.web.bind.annotation.*;
 import webapp.entity.User;
 import webapp.exceptions.UsernameDuplicated;
 import webapp.services.UserServiceInt;
+import webapp.utils.Utils;
+import webapp.utils.UtilsInt;
 
 import javax.validation.Valid;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/users")
@@ -21,20 +22,28 @@ public class UserResource {
     @Autowired
     private UserServiceInt userServ;
 
+    @Autowired
+    private UtilsInt utils;
+
     @PostMapping
-    public User add(@Valid @RequestBody User user) throws UsernameDuplicated {
-        return userServ.add(user);
+    public User save(@Valid @RequestBody User user) throws UsernameDuplicated {
+        return userServ.save(user);
     }
 
 
     @PutMapping("/{id}")
-    public ResponseEntity<User> update(@RequestBody User user, @PathVariable long id) {
+    public User update(@RequestBody User user, @PathVariable long id) {
 
-        if (userServ.getById(id) == null) return ResponseEntity.notFound().build();
-        userServ.delete(id);
-        user.setId(id);
-        userServ.add(user);
-        return ResponseEntity.noContent().build();
+        User userFound = userServ.findById(id);
+
+        Object userFinal = null;
+        try {
+            userFinal = utils.UpdatePatchFields(userFound, user);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+
+        return userServ.save((User) userFinal);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
@@ -44,11 +53,11 @@ public class UserResource {
     }
 
     @GetMapping(path = "/{id}")
-    public ResponseEntity<User> getById(@PathVariable("id") Long id, Pageable pageable) throws NoSuchFieldException {
+    public ResponseEntity<User> findById(@PathVariable("id") Long id, Pageable pageable) throws NoSuchFieldException {
 
         userServ.verifyIdUserLaunchException(id);
 
-        User user = userServ.getById(id);
+        User user = userServ.findById(id);
 
         return new ResponseEntity<User>(user, new HttpHeaders(), HttpStatus.OK);
     }
