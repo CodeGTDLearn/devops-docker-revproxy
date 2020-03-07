@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import webapp.entity.User;
 import webapp.exceptions.UsernameDuplicated;
 import webapp.services.UserServiceInt;
-import webapp.utils.Utils;
+
 import webapp.utils.UtilsInt;
 
 import javax.validation.Valid;

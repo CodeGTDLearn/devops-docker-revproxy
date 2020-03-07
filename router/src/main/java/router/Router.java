@@ -167,7 +167,7 @@ public class Router extends HttpServlet {
         endpoint = path.substring(path.indexOf(urlClassRouter) +
                 urlClassRouter.length(), path.length());
 
-        checkEndpoint(response, endpoint, "Invalid POST CALL empty URI");
+        checkEndpoint(response, endpoint, "Invalid PUT CALL empty URI");
 
         //6.4) PUT - GETA O IP, RETORNADO DO HOSTNAME SELECIONADO
         ipAddress = getIpAddress(response, webAppServiceNameFromCompose);

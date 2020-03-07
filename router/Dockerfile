@@ -16,8 +16,8 @@ EXPOSE 8009
 WORKDIR /opt/tomcat
 
 #General procedures
-ADD . /usr/local/router
 RUN mkdir -p /usr/local/router/logs
+ADD . /usr/local/router
 
 RUN cd /usr/local/router && mvn clean package
 

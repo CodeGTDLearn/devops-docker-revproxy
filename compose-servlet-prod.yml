@@ -14,8 +14,8 @@ networks:
 services:
   mysql:
     image: mysql:5.7.22
-#    ports:
-#     - "8888:3306" #>>> This port is used only for debug
+    #ports:
+    # - "8888:3306" #>>> This port is used only for debug
     hostname: mysql
     environment:
       *db-variables
@@ -25,8 +25,8 @@ services:
   router:
     build: router
     image: router-img
-    #ports:
-    #  - "1111:8080" >>> Porta escondida pois o nginx ja encaminha direto pra esta porta
+    ports:            #PORT:
+      - "1111:8080"   #REQUEST ENTRY-POINT [PORTA DE ENTRADA DO REQUESTS]
     hostname: router
     tty: true
     environment:
