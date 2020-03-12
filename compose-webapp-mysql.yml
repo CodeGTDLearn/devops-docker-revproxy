@@ -3,9 +3,9 @@ version: '3.4'
 #VARIAVEIS COMUNS DENTRO DO COMPOSE
 x-common-variables:
   &db-variables
-  MYSQL_DATABASE: Users
-  MYSQL_USERNAME: root
-  MYSQL_ROOT_PASSWORD: root
+    MYSQL_DATABASE: Users
+    MYSQL_USERNAME: root
+    MYSQL_ROOT_PASSWORD: root
 
 networks:
   db:
@@ -14,29 +14,14 @@ networks:
 services:
   mysql:
     image: mysql:5.7.22
-#    ports:
-#      - "8888:3306" #>>> This port is used only for debug
+    #ports:
+    # - "8888:3306" #>>> This port is used only for debug
     hostname: mysql
     environment:
       *db-variables
     networks:
       - db
-
-  router:
-    build: router\nginx
-    image: router-img-nginx
-    ports:            #PORT:
-      - "1111:8080"   #REQUEST ENTRY-POINT [PORTA DE ENTRADA DO REQUESTS]
-    hostname: router
-    tty: true
-    environment:
-      - NGINX_PORT=8080
-    depends_on:
-      - webapp
-    networks:
-      - router
-
-
+  
   webapp:
     build: webapp
     image: web-img

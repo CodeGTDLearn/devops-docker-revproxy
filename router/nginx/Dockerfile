@@ -4,21 +4,19 @@ EXPOSE 8080
 RUN rm /etc/nginx/nginx.conf
 COPY nginx.conf /etc/nginx/nginx.conf
 
-##########################################
-# the Java router-servlet-application
-# is not necessary IN THIS CASE
-# because NGINX will be the
-# router(reverse-proxy + load balancing).
-#
-# Therefore, all staff used for this(such as maven,
-# tomcat, tomcat environment variables, etc...)
-# the Java Application (incluiding that)
-# is not necessary anymore
-#
-# because ALL of them was substituted for NGINX
-###########################################
-
-
+#####################################################
+# The JAVA ROUTER-SERVLET-APPLICATION               #
+# is not necessary IN THIS CASE,                    #
+# because NGINX will be the                         #
+# router(reverse-proxy + load balancing).           #
+#                                                   #
+# Therefore, all staff used (such as maven,         #
+# tomcat, tomcat environment variables, etc...)     #
+# for the JAVA ROUTER-SERVLET-APPLICATION           #
+# (incluiding that) is not necessary anymore        #
+#                                                   #
+# because ALL of them was substituted for NGINX     #
+#####################################################
 # use-case 05
 #FROM pictolearn/tomcat8-jdk8
 

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="router:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>router</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="router-shield.war">
+      <element id="artifact" artifact-name="router:war exploded" />
+    </root>
+  </artifact>
+</component>
