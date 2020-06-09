@@ -1,6 +1,6 @@
 version: '3.4'
 
-#VARIAVEIS COMUNS DENTRO DO COMPOSE
+#DOCKER-COMPOSE COMMON VARIABLES [VARIAVEIS USADAS SOMENTE DENTRO DESTE DOCKER-COMPOSE FILE]
 x-common-variables:
   &db-variables
     MYSQL_DATABASE: Users
@@ -9,12 +9,14 @@ x-common-variables:
 
 networks:
   db:
+  router:
 
 services:
+
   mysql:
     image: mysql:5.7.22
-    #ports:
-    # - "8888:3306" #>>> This port is used only for debug
+    #ports:         #DEBUG-PORT
+    # - "8888:3306" #EXCLUSIVE PORT FOR DEBUG [PORTA EXCLUSIVA PARA DEBUG]
     hostname: mysql
     environment:
       *db-variables
@@ -24,8 +26,8 @@ services:
   webapp:
     build: webapp
     image: web-img
-    ports:
-      - "8080:8080"
+    #ports:         #TEST-PORT: EXCLUSIVE PORT FOR API TEST WITH HTTP-CLIENT[EX. POSTMAN]
+    # - "8080:8080" #[PORTA EXCLUSIVA PARA TESTE DA API COM HTTP-CLIENTE[EX. POSTMAN]]
     hostname: web
     tty: true
     depends_on:
@@ -36,3 +38,4 @@ services:
       DB_NOME_BANCO: Users
     networks:
       - db
+      - router
