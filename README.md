@@ -24,3 +24,25 @@
    3. Scaling:
       1. static
       2. dynamic
+
+
+4. NGINX
+   * Seguranca
+     * Reverse Proxy
+       * Evitar Ataques/Vetores Basicos
+     * Mitiga DDoS:
+       * Pois melhora a gestao de requests
+   * SSL
+   * Escalabilidade:
+     * Load Balancing
+       * Mesmo local
+       * Local diversos
+   * Cache:
+     * Cacheia URLs cacheaveis
+   * Acumulacao:
+     * Aninhamento de Proxies
+   * Compressao de dados:
+     * Trafego mais rapido (Escala)
+     * Custo reduzido por reducao de trafego
+     * Liberar Thread mais rapido (mitiga DDoS)
+     * Evita a 'compressao dentro da API' o que gasta mais cpu
